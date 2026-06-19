@@ -1,20 +1,77 @@
+# schema: spec-driven
+#context: |
+# Project: full-stack-adonis-react (master AI4Devs)
+## Context
+#Proyecto educativo para enseñar Spec-Driven Development.
+#Backend en AdonisJS 7, frontend en React 19 + Vite.
+## Stack
+#- Backend: AdonisJS 7, Lucid ORM, SQLite (better-sqlite3),
+#VineJS, @adonisjs/auth con guard access_tokens
+#- Frontend: React 19, Vite 7, Tailwind v4, shadcn/ui
+#- Tooling: Biome, simple-git-hooks, npm
+## Conventions
+#- TypeScript strict mode
+#- Migrations descriptivas con timestamp
+#- Controllers retornan JSON estructurado: { data } o { error }
+#- Tokens opacos con prefijo `oat_`
+
 schema: spec-driven
+context: |
+  # Project: legacy-delphi5-vcl-app
 
-# Project context (optional)
-# This is shown to AI when creating artifacts.
-# Add your tech stack, conventions, style guides, domain knowledge, etc.
-# Example:
-#   context: |
-#     Tech stack: TypeScript, React, Node.js
-#     We use conventional commits
-#     Domain: e-commerce platform
+  ## Context
+  Proyecto legacy desarrollado en Delphi 5 para entorno Windows.
+  Aplicación de escritorio basada en formularios VCL, orientada a mantenimiento,
+  evolución funcional y documentación mediante Spec-Driven Development.
 
-# Per-artifact rules (optional)
-# Add custom rules for specific artifacts.
-# Example:
-#   rules:
-#     proposal:
-#       - Keep proposals under 500 words
-#       - Always include a "Non-goals" section
-#     tasks:
-#       - Break tasks into chunks of max 2 hours
+  El objetivo del proyecto es aplicar un enfoque basado en especificaciones para
+  comprender, documentar y evolucionar una aplicación heredada, reduciendo el
+  riesgo de cambios sobre código legacy y mejorando la trazabilidad entre
+  requisitos, formularios, módulos, unidades Pascal y comportamiento funcional.
+
+  ## Stack
+  - Lenguaje: Object Pascal
+  - IDE: Borland Delphi 5
+  - Tipo de aplicación: Windows Desktop Application
+  - UI: VCL Forms
+  - Arquitectura: Aplicación monolítica legacy basada en formularios
+  - Persistencia: Acceso a datos heredado según implementación existente
+  - Base de datos: Por determinar según el proyecto legacy
+  - Componentes: VCL estándar y posibles componentes de terceros
+  - Sistema operativo objetivo: Microsoft Windows
+  - Tooling: Delphi 5 IDE, compilador clásico de Delphi, herramientas legacy existentes
+
+  ## Conventions
+  - Mantener compatibilidad con Delphi 5
+  - No introducir características modernas no soportadas por Delphi 5
+  - Usar sintaxis compatible con Object Pascal clásico
+  - Respetar la estructura existente de unidades `.pas`, formularios `.dfm` y proyectos `.dpr`
+  - Documentar cada cambio funcional mediante una especificación previa
+  - Relacionar cada especificación con los formularios, unidades y procedimientos afectados
+  - Evitar refactorizaciones masivas sin especificación y validación previa
+  - Mantener nombres existentes cuando formen parte del comportamiento histórico del sistema
+  - Priorizar cambios incrementales, seguros y trazables
+  - Las respuestas funcionales deben identificar:
+    - formulario afectado
+    - unidad Pascal afectada
+    - evento o procedimiento implicado
+    - reglas de negocio detectadas
+    - impacto sobre datos o procesos existentes
+  - Los errores deben documentarse de forma estructurada:
+    { error: descripcion, causa_probable, modulo_afectado, accion_recomendada }
+
+  ## Legacy constraints
+  - Código con posible acoplamiento fuerte entre interfaz, lógica de negocio y acceso a datos
+  - Formularios VCL con lógica embebida en eventos
+  - Posible dependencia de componentes no estándar
+  - Posible ausencia de tests automatizados
+  - Riesgo alto de regresión ante cambios no controlados
+  - Necesidad de preservar el comportamiento actual antes de evolucionarlo
+
+  ## Spec-Driven Development Rules
+  - Toda nueva funcionalidad debe partir de una especificación clara
+  - Todo cambio sobre funcionalidad existente debe incluir análisis de impacto
+  - Antes de modificar código legacy, identificar comportamiento actual esperado
+  - Las especificaciones deben poder traducirse a tareas técnicas concretas
+  - Cada tarea técnica debe indicar archivos Delphi afectados
+  - Cuando exista duda, priorizar documentación y caracterización antes de modificar

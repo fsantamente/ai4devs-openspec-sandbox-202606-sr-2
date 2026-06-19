@@ -1,0 +1,11 @@
+# Delphi compiled output
+*.exe
+*.dcu
+*.res
+*.dsk
+*.~dsk
+*.cfg
+*.dof
+*.bak
+*.~*
+__history/
